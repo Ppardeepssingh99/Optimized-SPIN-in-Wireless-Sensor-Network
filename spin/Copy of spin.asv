@@ -1,0 +1,45 @@
+
+
+clear;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PARAMETERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Field Dimensions - x and y maximum (in meters)
+xm=100;
+ym=100;
+
+%x and y Coordinates of the Sink
+sink.x=0.5*xm;
+sink.y=0.5*ym;
+
+%Number of Nodes in the field
+n=100;
+
+%Energy Model (all values in Joules)
+%Initial Energy 
+Eo=0.5;
+%Eelec=Etx=Erx
+ETX=50*0.000000001;
+ERX=50*0.000000001;
+%Transmit Amplifier types
+Efs=10*0.000000000001;
+Emp=0.0013*0.000000000001;
+
+%maximum number of rounds
+rmax=100;
+
+%%%%%%%%%%%%%%%%%%%%%%%%% END OF PARAMETERS %%%%%%%%%%%%%%%%%%%%%%%%
+
+%Computation of do
+do=sqrt(Efs/Emp);
+
+%Creation of the random Sensor Network
+figure(1);
+S(n+1).xd=sink.x;
+S(n+1).yd=sink.y;
+plot(S(n+1).xd,S(n+1).yd,'x');
+    
+        
+%First Iteration
+%figure(1);
+
